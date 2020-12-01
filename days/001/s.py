@@ -1,10 +1,10 @@
-from itertools import combinations
-from math import prod
-import sys
+from itertools import combinations as c
+from math import prod as p
+from sys import argv as a
 
-EXP = 2020
-EXPL = [int(i) for i in open("input").readlines()]
-N = int(sys.argv[1])
+I = open("input").readlines()
 
 # Solution
-print(prod([i for i in combinations(EXPL, N) if sum(i) == EXP][0]))
+s = [p(i) for i in c([int(i) for i in I], int(a[1])) if sum(i) == int(a[2])][0]
+
+print(s)
